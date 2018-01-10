@@ -1,22 +1,27 @@
 import * as React from 'react';
-import './App.css';
+import TaskPage from './components/TaskPage';
 
-const logo = require('./logo.svg');
+const mockTasks = [
+  {
+    id: 1,
+    title: 'Learn Redux',
+    description: 'The store, actions, and reducers, oh my!',
+    status: 'In Progress',
+  },
+  {
+    id: 2,
+    title: 'Peace on Earth',
+    description: 'No big deal.',
+    status: 'In Progress',
+  },
+];
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div className="main-content">
+        <TaskPage tasks={mockTasks} />
       </div>
     );
   }
 }
-
-export default App;
