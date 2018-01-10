@@ -14,6 +14,18 @@ const mockTasks = [
     description: 'No big deal.',
     status: 'In Progress',
   },
+  {
+    id: 3,
+    title: 'Grokking Algorithms',
+    description: 'Learn Algorithms and DS',
+    status: 'Unstarted',
+  },
+  {
+    id: 4,
+    title: 'Professional C#',
+    description: 'Learn C#',
+    status: 'Completed',
+  },
 ];
 
 export default class App extends React.Component {

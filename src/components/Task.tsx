@@ -11,12 +11,12 @@ interface TaskProps {
 }
 
 export const Task = (props: TaskProps) => {
-    return(
+    return (
         <div className="task">
             <div className="task-header">
                 <div>{props.task.title}</div>
             </div>
-            <hr/>
+            <hr />
             <div className="task-body">{props.task.description}</div>
         </div>
     );

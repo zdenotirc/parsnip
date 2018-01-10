@@ -7,9 +7,9 @@ interface TaskListProps {
 }
 
 export const TaskList = (props: TaskListProps) => {
-    return(
+    return (
         <div className="task-list">
-                <div className="task-list-title">
+            <div className="task-list-title">
                 <strong>{props.status}</strong>
             </div>
             {props.tasks.map(task => (
