@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Task, TaskModel } from './Task';
+import { ITaskModel, Task } from './Task';
 
-interface TaskListProps {
-    tasks: TaskModel[];
+interface ITaskListProps {
+    tasks: ITaskModel[];
     status: string;
 }
 
-export const TaskList = (props: TaskListProps) => {
+export const TaskList = (props: ITaskListProps) => {
     return (
         <div className="task-list">
             <div className="task-list-title">

@@ -1,16 +1,16 @@
 import * as React from 'react';
 
-export interface TaskModel {
+export interface ITaskModel {
     id: number;
     title: string;
     description: string;
 }
 
-interface TaskProps {
-    task: TaskModel;
+interface ITaskProps {
+    task: ITaskModel;
 }
 
-export const Task = (props: TaskProps) => {
+export const Task = (props: ITaskProps) => {
     return (
         <div className="task">
             <div className="task-header">

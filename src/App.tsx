@@ -29,7 +29,7 @@ const mockTasks = [
 ];
 
 export default class App extends React.Component {
-  render() {
+  public render() {
     return (
       <div className="main-content">
         <TaskPage tasks={mockTasks} />
