@@ -8,8 +8,19 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 
+import { createStore } from 'redux';
+
+import { Provider } from 'react-redux';
+
+import tasks from './reducers';
+
+const store = createStore(tasks);
+
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App title="App" />
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
+
 registerServiceWorker();
