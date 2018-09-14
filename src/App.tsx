@@ -20,8 +20,8 @@ class App extends React.Component<IStateProps & IAppProps> {
   }
 }
 
-function mapStateToProps(state: ITasksState){
+function mapStateToProps(state: ITasksState) {
   return state;
 }
 
-export default connect(mapStateToProps) (App);
+export default connect(mapStateToProps)(App);
