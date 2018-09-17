@@ -12,6 +12,8 @@ export interface ITaskPageModel {
 
 interface ITaskPageProps {
     tasks: ITaskPageModel[];
+
+    onCreateTask: (task: { title: string; description: string }) => void;
 }
 
 interface IState {
@@ -23,6 +25,7 @@ interface IState {
 export default class TaskPage extends React.Component<ITaskPageProps, IState> {
     constructor(props: ITaskPageProps) {
         super(props);
+
         this.state = {
             showNewCardForm: false,
             title: '',
@@ -70,6 +73,13 @@ export default class TaskPage extends React.Component<ITaskPageProps, IState> {
     }
 
     private onCreateTask = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        this.props.onCreateTask({
+            title: this.state.title,
+            description: this.state.description
+        });
+
         this.resetForm();
     }
 

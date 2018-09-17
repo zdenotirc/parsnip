@@ -1,24 +1,26 @@
+import { ICreateTaskAction, uniqueId } from '../actions';
+
 const mockTasks = [
     {
-        id: 1,
+        id: uniqueId(),
         title: 'Learn Redux',
         description: 'The store, actions, and reducers, oh my!',
         status: 'In Progress',
     },
     {
-        id: 2,
+        id: uniqueId(),
         title: 'Peace on Earth',
         description: 'No big deal.',
         status: 'In Progress',
     },
     {
-        id: 3,
+        id: uniqueId(),
         title: 'Grokking Algorithms',
         description: 'Learn Algorithms and DS',
         status: 'Unstarted',
     },
     {
-        id: 4,
+        id: uniqueId(),
         title: 'Professional C#',
         description: 'Learn C#',
         status: 'Completed',
@@ -35,6 +37,10 @@ export interface ITasksState {
     }>
 }
 
-export default function tasks(state: ITasksState = { tasks: mockTasks }, action: any) {
+export default function tasks(state: ITasksState = { tasks: mockTasks }, action: ICreateTaskAction) {
+    if (action.type === 'CREATE_TASK') {
+        return { tasks: state.tasks.concat(action.payload) };
+    }
+
     return state;
 }
